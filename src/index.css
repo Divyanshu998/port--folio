@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-primary text-text;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-accent;
+  }
+}
+
+/* Smooth scrolling styles */
+.smooth-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.smooth-scroll__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+@layer components {
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-textLight relative inline-block mb-10;
+  }
+  
+  .section-heading::after {
+    content: "";
+    @apply absolute -bottom-2 left-0 w-1/2 h-1 bg-accent;
+  }
+  
+  .nav-link {
+    @apply relative text-text hover:text-accent transition-colors duration-300 py-2;
+  }
+  
+  .nav-link::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .nav-item.active {
+    @apply text-accent;
+  }
+  
+  .nav-item.active::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 w-full h-0.5 bg-accent;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 border border-accent text-accent rounded hover:bg-accent/10 transition-all duration-300;
+  }
+  
+  .cosmic-bg {
+    background: radial-gradient(circle at 50% 50%, rgba(16, 25, 47, 0.8) 0%, rgba(2, 12, 27, 1) 100%);
+  }
+  
+  .grid-bg {
+    background-size: 50px 50px;
+    background-image: 
+      linear-gradient(to right, rgba(100, 255, 218, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(100, 255, 218, 0.05) 1px, transparent 1px);
+  }
+  
+  .glow {
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+  }
+  
+  .card {
+    @apply bg-secondary rounded-lg p-6 transition-all duration-300 border border-transparent hover:border-accent/30 hover:translate-y-[-5px];
+  }
+  
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l border-accent/30;
+  }
+  
+  .timeline-item::before {
+    content: "";
+    @apply absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-accent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent/30 rounded-full hover:bg-accent/50;
+}
+
+/* Loading screen transition */
+.loading-screen {
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+}
