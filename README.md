@@ -1,4 +1,4 @@
-��# Portfolio - Divyanshu Shinde
+# Portfolio - Divyanshu Shinde
 
 ![Portfolio Banner](https://via.placeholder.com/1200x400?text=Divyanshu+Shinde+Portfolio)
 
@@ -134,7 +134,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Divyanshu Shinde - [your-email@example.com](mailto:your-email@example.com)
+Divyanshu Shinde - [divyanshushinde103@gmail.com](mailto:your-email@example.com)
 
 Project Link: [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio)
 
